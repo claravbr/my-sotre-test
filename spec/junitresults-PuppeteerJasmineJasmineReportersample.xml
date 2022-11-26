@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="1" tests="1" time="5.021">
+ <testsuite name="Puppeteer+Jasmine+Jasmine Reporter sample" timestamp="2022-11-26T22:00:15" hostname="localhost" time="5.021" errors="0" tests="1" skipped="0" disabled="0" failures="1">
+  <testcase classname="Puppeteer+Jasmine+Jasmine Reporter sample" name="Share test" time="5.017">
+   <failure type="exception" message="Error: Timeout - Async function did not complete within 5000ms (set by jasmine.DEFAULT_TIMEOUT_INTERVAL)"><![CDATA[at <Jasmine>
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+</testsuites>

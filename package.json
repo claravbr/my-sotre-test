@@ -1,0 +1,24 @@
+{
+  "name": "my-store-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "jasmine": "^4.5.0",
+    "jasmine-reporters": "^2.5.2",
+    "puppeteer": "^19.3.0"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claravbr/my-store-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claravbr/my-store-test/issues"
+  },
+  "homepage": "https://github.com/claravbr/my-store-test#readme",
+  "description": ""
+}
