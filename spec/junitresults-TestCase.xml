@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="0" tests="1" time="3.044">
- <testsuite name="Test Case" timestamp="2022-11-28T15:08:01" hostname="localhost" time="3.044" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Test Case" name="Test Item 1 - Share" time="3.044" />
+<testsuites disabled="0" errors="0" failures="0" tests="5" time="9.381">
+ <testsuite name="Test Case" timestamp="2022-11-28T17:33:06" hostname="localhost" time="9.381" errors="0" tests="5" skipped="0" disabled="0" failures="0">
+  <testcase classname="Test Case" name="Test Item 4 - Listar Productos" time="3.994" />
+  <testcase classname="Test Case" name="Test Item 3 - Ver Producto" time="1.319" />
+  <testcase classname="Test Case" name="Test Item 5 - Precios de envio" time="1.491" />
+  <testcase classname="Test Case" name="Test Item 2 - Notificar" time="1.447" />
+  <testcase classname="Test Case" name="Test Item 1 - Compartir" time="1.126" />
  </testsuite>
 </testsuites>
