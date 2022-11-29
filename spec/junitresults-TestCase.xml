@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="0" tests="8" time="11.513">
- <testsuite name="Test Case" timestamp="2022-11-29T18:22:22" hostname="localhost" time="11.513" errors="0" tests="8" skipped="0" disabled="0" failures="0">
-  <testcase classname="Test Case" name="Test Item 2 - Notificar" time="1.799" />
-  <testcase classname="Test Case" name="Test Item 5 - Ver Precios de Envio" time="1.191" />
-  <testcase classname="Test Case" name="Test Item 8 - Comprar Producto" time="1.474" />
-  <testcase classname="Test Case" name="Test Item 7 - Añadir Producto al Carro" time="1.823" />
-  <testcase classname="Test Case" name="Test Item 6 - Mostrar Carro" time="1.815" />
-  <testcase classname="Test Case" name="Test Item 3 - Ver Producto" time="1.272" />
-  <testcase classname="Test Case" name="Test Item 1 - Compartir" time="0.992" />
-  <testcase classname="Test Case" name="Test Item 4 - Listar Productos" time="1.144" />
+<testsuites disabled="0" errors="0" failures="0" tests="8" time="13.041">
+ <testsuite name="Test Case" timestamp="2022-11-29T18:43:34" hostname="localhost" time="13.041" errors="0" tests="8" skipped="0" disabled="0" failures="0">
+  <testcase classname="Test Case" name="Test Item 5 - Ver Precios de Envio" time="1.565" />
+  <testcase classname="Test Case" name="Test Item 7 - Añadir Producto al Carro" time="1.885" />
+  <testcase classname="Test Case" name="Test Item 6 - Mostrar Carro" time="2.09" />
+  <testcase classname="Test Case" name="Test Item 8 - Comprar Producto" time="1.937" />
+  <testcase classname="Test Case" name="Test Item 3 - Ver Producto" time="1.851" />
+  <testcase classname="Test Case" name="Test Item 4 - Listar Productos" time="1.323" />
+  <testcase classname="Test Case" name="Test Item 1 - Compartir" time="1.177" />
+  <testcase classname="Test Case" name="Test Item 2 - Notificar" time="1.209" />
  </testsuite>
 </testsuites>

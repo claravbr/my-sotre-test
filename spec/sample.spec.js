@@ -27,11 +27,11 @@ describe('Test Case', function () {
 				await browser.close();
 				resolve();
 			});
-			console.time(' Compartir')
+			
 			let share1 = await page.waitForSelector('body > app-root > div > app-product-list > button');
 			share1.click();
 			await promise;
-			console.timeEnd(' Compartir')
+			
 		})
 		return promise;
 	});
@@ -49,11 +49,11 @@ describe('Test Case', function () {
 				await browser.close();
 				resolve();
 			});
-			console.time(' Notificar')
+			
 			let share1 = await page.waitForSelector('body > app-root > div > app-product-list > div:nth-child(2) > app-product-alerts > p > button');
 			share1.click();
 			await promise;
-			console.timeEnd(' Notificar')
+			
 		})
 		return promise;
 	});
@@ -70,11 +70,11 @@ describe('Test Case', function () {
 				await browser.close();
 				resolve();
 			});
-			console.time(' Ver Producto')
+			
 			let share1 = await page.waitForSelector('body > app-root > div > app-product-list > div:nth-child(2) > h3 > a');
 			share1.click();
 			await promise;
-			console.timeEnd(' Ver Producto')
+			
 		})
 		return promise;
 	});
@@ -91,11 +91,11 @@ describe('Test Case', function () {
 				await browser.close();
 				resolve();
 			});
-			console.time(' Listar Productos')
+			
 			let share1 = await page.waitForSelector('body > app-root > app-top-bar > a:nth-child(1)');
 			share1.click();
 			await promise;
-			console.timeEnd(' Listar Productos')
+			
 		})
 		return promise;
 	});
@@ -112,11 +112,11 @@ describe('Test Case', function () {
 				await browser.close();
 				resolve();
 			});
-			console.time(' Ver Precios de Envio')
+			
 			let share1 = await page.waitForSelector('body > app-root > div > app-cart > p > a');
 			share1.click();
 			await promise;
-			console.timeEnd(' Ver Precios de Envio')
+			
 		})
 		return promise;
 	});
@@ -135,11 +135,11 @@ describe('Test Case', function () {
 				await browser.close();
 				resolve();
 			});
-			console.time(' Mostrar Carro')
+			
 			let share1 = await page.waitForSelector('body > app-root > app-top-bar > a.button.fancy-button');
 			share1.click();
 			await promise;
-			console.timeEnd(' Mostrar Carro')
+			
 		})
 		return promise;
 	});
@@ -162,11 +162,11 @@ describe('Test Case', function () {
 				await browser.close();
 				resolve();
 			});
-			console.time(' Añadir Productos al Carro')
+			
 			let share1 = await page.waitForSelector('body > app-root > div > app-product-details > div > button');
 			share1.click();
 			await promise;
-			console.timeEnd(' Añadir Productos al Carro')
+			
 		})
 		return promise;
 	});
@@ -190,11 +190,11 @@ describe('Test Case', function () {
 				await browser.close();
 				resolve();
 			});
-			console.time(' Comprar Producto')
+			
 			let share1 = await page.waitForSelector('body > app-root > div > app-product-details > div > button');
 			share1.click();
 			await promise;
-			console.timeEnd(' Comprar Producto')
+			
 		})
 		return promise;
 	});
