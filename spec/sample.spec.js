@@ -20,8 +20,6 @@ describe('Test Case', function () {
 
 		let promise = new Promise(async function (resolve, reject) {
 			page.on('dialog', async dialog => {
-				//console.log(dialog.message());
-				//console.log('DIALOG');
 				let m = dialog.message()
 				expect(m).toEqual('The product has been shared!');
 				await dialog.accept();
@@ -42,8 +40,6 @@ describe('Test Case', function () {
 
 		let promise = new Promise(async function (resolve, reject) {
 			page.on('dialog', async dialog => {
-				//console.log(dialog.message());
-				//console.log('DIALOG');
 				let m = dialog.message()
 				expect(m).toEqual('You will be notified when the product goes on sale');
 				await dialog.accept();
@@ -64,12 +60,8 @@ describe('Test Case', function () {
 
 		let promise = new Promise(async function (resolve, reject) {
 			page.on('request', async request => {
-				//console.log(dialog.message());
-				//console.log('DIALOG');
-				//let m = dialog.message()
 				let m = page.url();
 				expect(m).toEqual('http://localhost:4200/products/1');
-				//await dialog.accept();
 				await browser.close();
 				resolve();
 			});
@@ -87,16 +79,12 @@ describe('Test Case', function () {
 
 		let promise = new Promise(async function (resolve, reject) {
 			page.on('request', async request => {
-				//console.log(dialog.message());
-				//console.log('DIALOG');
-				//let m = dialog.message()
 				let m = page.url();
 				expect(m).toEqual('http://localhost:4200/');
-				//await dialog.accept();
 				await browser.close();
 				resolve();
 			});
-			let share1 = await page.waitForSelector('body > app-root > app-top-bar > a:nth-child(1) > h1');
+			let share1 = await page.waitForSelector('body > app-root > app-top-bar > a:nth-child(1)');
 			share1.click();
 			await promise;
 		})
@@ -110,12 +98,8 @@ describe('Test Case', function () {
 
 		let promise = new Promise(async function (resolve, reject) {
 			page.on('request', async request => {
-				//console.log(dialog.message());
-				//console.log('DIALOG');
-				//let m = dialog.message()
 				let m = page.url();
 				expect(m).toEqual('http://localhost:4200/shipping');
-				//await dialog.accept();
 				await browser.close();
 				resolve();
 			});
@@ -125,4 +109,88 @@ describe('Test Case', function () {
 		})
 		return promise;
 	});
+
+	it('Test Item 6 - Mostrar Carro', async function () {
+		const browser = await puppeteer.launch({ headless: false });
+		//Por alguna razon, falla si no se pone el headless false
+		const page = await browser.newPage();
+		await page.goto('http://localhost:4200/');
+
+		let promise = new Promise(async function (resolve, reject) {
+			page.on('request', async request => {
+				await page.waitForNavigation();
+				let m = page.url();
+				expect(m).toEqual('http://localhost:4200/cart');
+				await browser.close();
+				resolve();
+			});
+			let share1 = await page.waitForSelector('body > app-root > app-top-bar > a.button.fancy-button');
+			share1.click();
+			await promise;
+		})
+		return promise;
+	});
+
+	it('Test Item 7 - Añadir Producto al Carro', async function () {
+		const browser = await puppeteer.launch({ headless: false });
+		//Por alguna razon, falla si no se pone el headless false
+		const page = await browser.newPage();
+		await page.goto('http://localhost:4200/products/1');
+
+		let promise = new Promise(async function (resolve, reject) {
+			page.on('dialog', async dialog => {
+				let m = dialog.message()
+				expect(m).toEqual('Your product has been added to the cart!');
+				await dialog.accept();
+				let share1 = await page.waitForSelector('body > app-root > app-top-bar > a.button.fancy-button');
+				share1.click();
+				await page.waitForNavigation();
+				await page.waitForSelector('body > app-root > div > app-cart > div > span:nth-child(1)');
+				await browser.close();
+				resolve();
+			});
+			let share1 = await page.waitForSelector('body > app-root > div > app-product-details > div > button');
+			share1.click();
+			await promise;
+		})
+		return promise;
+	});
+
+	it('Test Item 8 - Comprar Producto', async function () {
+		const browser = await puppeteer.launch({ headless: false });
+		//Por alguna razon, falla si no se pone el headless false
+		const page = await browser.newPage();
+		await page.goto('http://localhost:4200/products/1');
+
+		let promise = new Promise(async function (resolve, reject) {
+			page.on('dialog', async dialog => {
+				await dialog.accept();
+				let share1 = await page.waitForSelector('body > app-root > app-top-bar > a.button.fancy-button');
+				share1.click();
+				await page.waitForNavigation();
+				await page.waitForSelector('body > app-root > div > app-cart > div > span:nth-child(1)');
+				await page.$eval('#name', el => el.value = 'Julio Caesar');
+				await page.$eval('#address', el => el.value = 'Roma');
+				await page.waitForSelector('body > app-root > div > app-cart > form > button');
+				await browser.close();
+				resolve();
+			});
+			let share1 = await page.waitForSelector('body > app-root > div > app-product-details > div > button');
+			share1.click();
+			await promise;
+		})
+		return promise;
+	});
 })
+
+/*const puppeteer = require('puppeteer');
+const browser = await puppeteer.launch()
+const page = await browser.newPage()
+await page.goto('http://localhost:4200/')
+
+await page.setViewport({ width: 1536, height: 754 })
+
+await page.waitForSelector('body > app-root > app-top-bar > .button')
+await page.click('body > app-root > app-top-bar > .button')
+
+await browser.close()*/
